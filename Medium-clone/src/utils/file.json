@@ -1,0 +1,60 @@
+{
+  "title": "React & Javascript Optimization Techniques",
+  "userData": {
+    "name": "Rafael Rojas",
+    "userImage": "https://miro.medium.com/v2/da:true/resize:fill:44:44/0*aWMEZd7RCL0rWhYc",
+    "imageUrl": "https://miro.medium.com/v2/resize:fit:720/format:webp/0*Bdz6s4_QyPto9ddw",
+    "imageGlobant": "https://miro.medium.com/v2/resize:fill:24:24/1*0Wnn42G23dANSroOAFr7vQ.png",
+    "publishedBy": "Globant",
+    "backgroundUrl": "https://miro.medium.com/v2/resize:fit:720/format:webp/0*Bdz6s4_QyPto9ddw",
+    "photoCredit": "Clément Hélardot on Unsplash",
+    "urlLinked": "https://www.linkedin.com/in/RafaelRojasCov"
+  },
+  "mainText": "When we begin a project, we tend to focus on things like scalability, usability, availability, security, and others. But, as the application grows, we may observe a decline in its speed and performance. It is often only at this point that we recognize the need for optimization.",
+  "secondaryText": "In this article, we will present some of the most common techniques for optimizing code, which can be implemented in any application; we will also show optimization techniques using sample code written in JavaScript and React. The following techniques are gonna be covered:",
+  "techniquesCovered": [
+    "Debouncing",
+    "Throttling",
+    "Memoization",
+    "Pure Components",
+    "Lazy Loading",
+    "Virtualization (or Windowing)",
+    "Error Boundaries",
+    "Inline Functions"
+  ],
+  "moreTechniquesInfo": "There are many more techniques available, but in this article, we will focus on the ones already mentioned.",
+  "debouncing": {
+    "tile": "Debouncing",
+    "description": "Debouncing is a programming technique used to optimize the processing of functions that consume a lot of execution time. This technique involves preventing those functions from executing repeatedly without control, which helps improve the performance of our applications.",
+    "useCases": "Here is a simple example of how to implement Debouncing in code using JavaScript:"
+  },
+  "virtualization": {
+    "title": "Virtualization (Windowing)",
+    "description": "React virtualization is a powerful technique for creating high-performing user interfaces that only display the elements currently in use. Whether you use a React virtualized library or build your own algorithm, the technique is specifically designed to handle large datasets and improve UI performance. By selectively rendering only the elements needed at any given time, virtualization in React leads to faster load times and a smoother user experience overall.",
+    "imageUrl": "https://miro.medium.com/v2/resize:fit:720/format:webp/0*mSZz3jEhxmiQj1gn"
+  },
+  "tags": [
+    "JavaScript",
+    "Optimization",
+    "Performance",
+    "Javascript Tips",
+    "React"
+  ],
+  "targetData": {
+    "urlImage": "https://miro.medium.com/v2/resize:fit:1019/1*H11PA4EAyMVyPqQWg4AOkg.jpeg",
+    "title": "Boost your Productivity: Integrate GitHub Copilot with Xcode",
+    "description": "Are you tired of writing repetitive code and wish there was an easier way to generate it?... ",
+    "created": "6 min read · May 9, 2023"
+  },
+  "contact": [
+    "Help",
+    "Status",
+    "About",
+    "Careers",
+    "Blog",
+    "Privacy",
+    "Terms",
+    "Text to speech",
+    "Teams"
+  ]
+}
