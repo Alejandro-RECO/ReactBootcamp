@@ -5,15 +5,15 @@ import Card from '../../components/Card';
 import { useEffect, useState } from 'react'
 import { RiAlignRight } from "react-icons/ri";
 import { getQuotes, getQuotesByCharacter } from './services/homeServices.js';
-import { useDebounce } from 'use-debounce';
+import { useDebouncedCallback } from 'use-debounce';
 
 const Home = () => {
 
-  const[toggleButton, setToggleButton] = useState(true)
-  const[dataApi, setDataApi] = useState([])
-  const[isLoading, setIsILoading] = useState(true)
-  const [inputValue, setInputValue] = useState("");
-  const [debouncedValue] = useDebounce(inputValue, 1000)
+  const [toggleButton, setToggleButton] = useState(true)
+  const [dataApi, setDataApi] = useState([])
+  const [isLoading, setIsILoading] = useState(true)
+  const [inputValue, setInputValue] = useState('home');
+  const [listCharacters, setListCharacters] = useState('')
 
   const handleInputValue = (e)=>{
     const value = e.target.value
@@ -37,14 +37,23 @@ const Home = () => {
     setToggleButton(true)
     setIsILoading(true)
   }
+
+  const fetchData = ()=>{
+    handleObservables(getQuotesByCharacter(1,inputValue)) 
+  }
   
   useEffect(() =>{
-    if(toggleButton){
-      // handleObservables(getQuotes())
-      handleObservables(getQuotesByCharacter(debouncedValue)) 
-    }
-  }, [dataApi, toggleButton, isLoading])
+    debouncedValue(inputValue)
+  }, [inputValue])
 
+  const debouncedValue = useDebouncedCallback(
+    (value) =>{
+      getQuotesByCharacter(3,value)
+      handleObservables(getQuotesByCharacter(1,inputValue)) 
+    },
+    1000
+  )
+  
   
   return (
     <main className='home'>
@@ -61,10 +70,12 @@ const Home = () => {
           <h2 className='subtitle'>Discover some Simpsons quotes</h2>
           <input
             onChange={handleInputValue}
+            value={inputValue}
             className='search_characters'
             type="text" 
             placeholder='Search'
           />
+          
         </section>
           
           <section className='quotes_cards'>
@@ -85,7 +96,7 @@ const Home = () => {
 
         <div className='quote_actions_content'>
           <button 
-            onClick={handleClick}
+            onClick={fetchData}
             className='show-more'>
               Show me more
           </button>
