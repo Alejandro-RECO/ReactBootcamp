@@ -1,32 +1,51 @@
-import React, { useEffect, useState } from 'react'
-
 import './index.scss'
-import { RiAlignRight } from "react-icons/ri";
 import Card from '../../components/Card';
-import { getQuotes } from './services/homeServices.js';
+
+
+import { useEffect, useState } from 'react'
+import { RiAlignRight } from "react-icons/ri";
+import { getQuotes, getQuotesByCharacter } from './services/homeServices.js';
+import { useDebounce } from 'use-debounce';
 
 const Home = () => {
+
   const[toggleButton, setToggleButton] = useState(true)
   const[dataApi, setDataApi] = useState([])
   const[isLoading, setIsILoading] = useState(true)
+  const [inputValue, setInputValue] = useState("");
+  const [debouncedValue] = useDebounce(inputValue, 1000)
 
-  
+  const handleInputValue = (e)=>{
+    const value = e.target.value
+    setInputValue(value)
+  }
+
   // const result = whitResult
+  const handleObservables = (observable)=>{
+    setIsILoading(true)
+    setToggleButton(true)
 
+    observable.then(result =>{
+      setDataApi(result)
+      setIsILoading(false)
+      setToggleButton(false)
+    })
+  }
+  // console.log(debouncedValue);
+  
   const handleClick = () =>{
     setToggleButton(true)
     setIsILoading(true)
   }
+  
   useEffect(() =>{
     if(toggleButton){
-      getQuotes().then(data =>{
-        setDataApi(data)
-        setIsILoading(false)
-      })
-      setToggleButton(false)
+      // handleObservables(getQuotes())
+      handleObservables(getQuotesByCharacter(debouncedValue)) 
     }
   }, [dataApi, toggleButton, isLoading])
 
+  
   return (
     <main className='home'>
       <section className='container container__black'>
@@ -40,7 +59,8 @@ const Home = () => {
         </header>
         <section className='search_content'>
           <h2 className='subtitle'>Discover some Simpsons quotes</h2>
-          <input 
+          <input
+            onChange={handleInputValue}
             className='search_characters'
             type="text" 
             placeholder='Search'
