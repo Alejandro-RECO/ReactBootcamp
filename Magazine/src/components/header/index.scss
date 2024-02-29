@@ -1,0 +1,25 @@
+
+.marmot-hed{
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content:baseline;
+  color: white;
+  gap: 10px;
+  // border-bottom: 2px solid red;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    .title{
+      font-size: 4.1rem;
+      font-weight: bold;
+      border-bottom: 1px solid white;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    .subtitle{
+      font-size: 1.2rem;
+      margin-right: 30px;
+    }
+
+  }

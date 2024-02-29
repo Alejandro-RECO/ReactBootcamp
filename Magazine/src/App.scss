@@ -1,0 +1,7 @@
+.container{
+  height: 100%;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  gap: 260px;
+  // border: 1px solid red;
+}

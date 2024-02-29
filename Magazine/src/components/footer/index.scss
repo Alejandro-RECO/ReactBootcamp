@@ -1,0 +1,37 @@
+.call{
+  color: rgb(205, 205, 205);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  // border: 1px solid red;
+  gap: 20px;
+  .action-content{
+    font-size: 1.4rem;
+    color: white;
+    border-bottom: 3px solid white;
+  }
+  
+  .year-contente{
+    // padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: white;
+    gap: 20px;
+
+    .strong{
+      border-right: 3px solid white;
+      padding-right: 20px;
+    }
+
+    .strong-info{
+      font-size: 1.7rem;
+      font-weight: bold;
+      font-style: italic;
+    }
+  }
+}
