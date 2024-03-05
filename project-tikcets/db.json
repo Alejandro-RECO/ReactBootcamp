@@ -1,0 +1,16 @@
+{
+  "tickets": [
+    {
+      "id" : "1", 
+      "title" : "Update dropdown component design",
+      "priority" : "P1",
+      "description" : "As a StarMeUp user i want o be able to select who to send a star to"
+    },
+    {
+      "id" : "2", 
+      "title" : "Update dropdown component design",
+      "priority" : "P1",
+      "description" : "As a StarMeUp user i want o be able to select who to send a star to"
+    }
+  ]
+}
