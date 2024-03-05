@@ -1,20 +1,15 @@
 import { useState } from "react"
 import { getTickets } from "./services/httpverbs"
+import FormTickets from "./form";
 
 const App = () => {
 
   const tickets = getTickets();
 
   return (
-    <>
-      {
-        tickets.map((item) =>(
-          <div key={item.id}>
-            <h1>{item.title}</h1>
-          </div>
-        ))
-      }
-    </>
+    <section className="bg-gray-200/50 h-screen flex items-center justify-center">
+     <FormTickets/>
+    </section>
   )
 }
 

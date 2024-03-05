@@ -29,7 +29,12 @@ export const postTickets = (data) =>{
   useEffect(() =>{
     const postData = async ()=>{
       try{
-        const response = await axios.post(baseURL, data)
+        const response = await axios.post(baseURL, {
+          id: data.id,
+          title: data.title,
+          priority: data.priority,
+          description: data.description
+        })
         console.log("POST 200", response);
       }catch(e){
         console.error("ERROR POST:", e);
@@ -39,5 +44,4 @@ export const postTickets = (data) =>{
     postData();
 
   },[])
-    
 }
