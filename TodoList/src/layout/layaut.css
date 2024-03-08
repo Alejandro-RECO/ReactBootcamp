@@ -1,0 +1,21 @@
+.container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  .title{
+    font-size: 2rem;
+  }
+  .content{
+    width: 860px;
+    background-color: #d9d9d9;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+}

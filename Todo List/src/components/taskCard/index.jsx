@@ -16,11 +16,15 @@ const TaskCard = ({ task }) => {
     updateTask(task.id, {done: !task.done})
   }
 
+  var created_at = task.created_at.substring(0, 10)
   return (
     <div 
       className="w-[370px] border-2 py-2 px-3 flex items-center justify-between rounded-lg"
       key={task.id}>
-      <h1 className="font-medium text-primary-950">{task.name}</h1>
+        <div>
+          <h1 className="font-medium text-primary-950">{task.name}</h1>
+          <span className="text-xs ">{created_at}</span>
+        </div>
       
       <div className="text-lg flex items-center gap-3">
         <button onClick={()=>  handleDelet()}>
