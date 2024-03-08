@@ -1,0 +1,20 @@
+.todo-card{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 99% 1%;
+  padding: 20px;
+  background: #ffffff;
+  font-size: 1.3rem ;
+  margin-bottom: 1.3rem;
+  font-weight: lighter;
+  border: 1px solid black;
+
+  h2{
+    text-align: center;
+  }
+  
+}
+
+.todo-link{
+  width: 100%;
+}

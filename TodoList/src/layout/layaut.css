@@ -8,6 +8,7 @@
 
   .title{
     font-size: 2rem;
+    margin-bottom: 30px;
   }
   .content{
     width: 860px;
@@ -17,5 +18,11 @@
     flex-direction: column;
     align-items: center;
     
+  }
+  .link-newTodo{
+    padding: 10px 20px ;
+    background-color: #d9d9d9;
+    margin-top: 20px;
+    font-size: 1.3rem;
   }
 }

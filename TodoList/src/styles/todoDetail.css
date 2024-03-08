@@ -1,0 +1,15 @@
+.todo-detail{
+  display: grid;
+  grid-template-rows: .5fr .5fr 4fr ;
+  grid-template-columns: 1fr;
+  width: 100%;
+  gap: 20px;
+  height: 500px;
+  padding: 40px;
+
+  .details{
+    border: 2px solid black;
+    padding: 10px ;
+    background-color: #ffff;
+  }
+}
