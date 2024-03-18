@@ -1,16 +1,18 @@
 {
   "tickets": [
     {
-      "id" : "1", 
-      "title" : "Update dropdown component design",
-      "priority" : "P1",
-      "description" : "As a StarMeUp user i want o be able to select who to send a star to"
+      "id": "590e",
+      "title": "Update dropdown compon",
+      "priority": 2,
+      "description": "As a StarMeUp user i want o be",
+      "done": false
     },
     {
-      "id" : "2", 
-      "title" : "Update dropdown component design",
-      "priority" : "P1",
-      "description" : "As a StarMeUp user i want o be able to select who to send a star to"
+      "id": "9857",
+      "title": "Update dropdown compon",
+      "priority": 1,
+      "description": "As a StarMeUp user i want o be",
+      "done": true
     }
   ]
 }

@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { postTickets } from '../services/httpverbs';
 
 import { v4 as uuidv4 } from 'uuid';
 
 const FormTickets = () => {
+  const [done, setDone] = useState(false)
   const [formData, setFormData] = useState({
     id: uuidv4(),
     title: '',
     priority: '',
-    description: ''
+    description: '',
+    done: done,
   });
 
   const [error, setError] = useState({
@@ -25,11 +27,21 @@ const FormTickets = () => {
     }));
   };
 
-  const handlePriorityChange = (e) => {
-    const { value } = e.target;
+  const handleCheckboxChange = (e) => {
+    const isChecked = e.target.checked;
+    setDone(isChecked);
     setFormData((prevFormData) => ({
       ...prevFormData,
-      priority: value
+      done: isChecked, // Actualiza la propiedad done en formData con el valor de isChecked
+    }));
+  };
+
+  const handlePriorityChange = (e) => {
+    const { value } = e.target;
+    const parsedValue = parseInt(value, 10);
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      priority: parsedValue
     }));
   };
 
@@ -49,8 +61,13 @@ const FormTickets = () => {
     if (Object.values(newErrors).some((error) => error)) {
       return;
     }
-
     postTickets(formData)
+
+    setFormData({
+      title: '',
+      priority: '',
+        description: '',
+    })
   };
 
   return (
@@ -67,6 +84,9 @@ const FormTickets = () => {
           type="text"
           id='title'
           name='title'
+          minlength="6"
+          maxlength="22 " 
+          required
           value={formData.title}
           onChange={handleChange}
           placeholder='Add the ticket title'
@@ -103,6 +123,7 @@ const FormTickets = () => {
           }`}
           placeholder='Add the ticket description'
           name="description"
+          maxLength={30}
           value={formData.description}
           onChange={handleChange}
           id="description"
@@ -115,7 +136,13 @@ const FormTickets = () => {
         <label className='font-semibold text-lg' htmlFor="checkbox">
           Mark as resolve
         </label>
-        <input id='checkbox' type="checkbox" />
+        <input 
+          id='checkbox' 
+          type="checkbox"
+          name='done'
+          checked={done} 
+          onChange={handleCheckboxChange}
+        />
       </div>
       <button className='w-full bg-blue-600 p-2 text-white font-semibold rounded-2xl'>Submit</button>
     </form>
