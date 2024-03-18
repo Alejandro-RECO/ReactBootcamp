@@ -7,11 +7,11 @@ const TodoList = () => {
   const todos = useSelector((state) => state.todo)
   // console.log(todos);
 
-  if (todos.length === 0) return <p>Not tastk there</p>
+  if (todos.length === 0) return <p className='py-5 font-semibold'>Not tastk there...</p>
 
   return (
-    <div>
-      <ul>
+    <div className='w-[500px] p-4'>
+      <ul className='flex flex-col justify-center gap-5'>
         {
           todos.map((item)=>(
             <Todo
