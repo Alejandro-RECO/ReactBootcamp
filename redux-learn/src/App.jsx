@@ -1,12 +1,18 @@
+import {  Route, Routes } from "react-router-dom";
+import Login from "./pages/login";
+import SingIn from "./pages/singIn";
+import Home from "./pages/home";
 
-function App() {
 
+const App = () => {
+  
   return (
-    <>
-     <h1 className='bg-red-400'>Hello Redux</h1>
-    </>
-  )
-}
+    <Routes>
+      <Route path="/" element={<Login/>}/>
+      <Route path="/sign-in" element={<SingIn/>}/>
+      <Route path="/home" element={<Home/>}/>
+    </Routes>
+  );
+};
 
-export default App
-
+export default App;
